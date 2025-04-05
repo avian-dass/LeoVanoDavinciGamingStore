@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | LEOVANODAVINCI’S GAMING STORE LTD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link to homepage styles -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #f5f5f5; /* cream background */
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    header {
+      background-color: #e0e0e0;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .registration-container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .registration-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .submit-btn {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html">
+    <img src="leovanodavincilogo.jpeg" alt="LeoVanoDavinci Logo" />
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="contactus.html">Contact Us</a>
+    <a href="registration.html">Register</a>
+  </nav>
+</header>
+
+<div class="registration-container">
+  <h2>Sign Up</h2>
+  <form name="registrationForm" onsubmit="return validateForm()">
+    <div class="form-group">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required minlength="4">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required minlength="6">
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+    </div>
+
+    <div class="form-group">
+      <label for="favoriteConsole">Favorite Console</label>
+      <select id="favoriteConsole" name="favoriteConsole" required>
+        <option value="">-- Select --</option>
+        <option value="PS5">PlayStation 5</option>
+        <option value="Xbox">Xbox Series X</option>
+        <option value="PC">PC</option>
+        <option value="Switch">Nintendo Switch</option>
+      </select>
+    </div>
+
+    <button type="submit" class="submit-btn">Register</button>
+  </form>
+</div>
+
+<script>
+  function validateForm() {
+    const pwd = document.getElementById("password").value;
+    const confirmPwd = document.getElementById("confirmPassword").value;
+
+    if (pwd !== confirmPwd) {
+      alert("Passwords do not match!");
+      return false;
+    }
+
+    return true;
+  }
+</script>
+
+</body>
+</html>
